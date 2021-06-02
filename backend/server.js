@@ -2,11 +2,11 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const socketio = require('socket.io');
+var user = require('./utils/user');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-import { userJoin } from "./utils/user";
 
 //static folder
 app.use(express.static(path.join(__dirname, 'public')))

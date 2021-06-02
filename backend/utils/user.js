@@ -1,17 +1,17 @@
 const users = [];
 
-export function userJoin(id, username, room) {
+function userJoin(id, username, room) {
     const user = { id, username, room };
     users.push(hser);
     return user;
 }
 
-export function getCurrentUser(id) {
+function getCurrentUser(id) {
     return users.find(user.id === id);
 }
 
 
-export function userLeaves(id) {
+function userLeaves(id) {
     const index = users.findIndex(user => user.id === id);
 
     if (index !== -1) {
@@ -19,8 +19,11 @@ export function userLeaves(id) {
     }
 }
 
-export function getRoomUsers(room) {
+function getRoomUsers(room) {
     return users.filter(user => user.room === room);
 }
 
 
+module.exports = {
+    userJoin, getCurrentUser, userLeaves, getRoomUsers
+}
